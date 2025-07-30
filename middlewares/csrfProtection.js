@@ -22,7 +22,7 @@ const csrfMiddleware = (req, res, next) => {
         // Store the hash in a secure, HttpOnly cookie (not accessible by JavScript)
         res.cookie('csrf_token', csrfTokenHash, {
             httpOnly: true,
-            sameSit: 'Strict', // Prevents cross-site cookie usage
+            sameSite: 'Strict', // Prevents cross-site cookie usage
             secure: true
         });
 
