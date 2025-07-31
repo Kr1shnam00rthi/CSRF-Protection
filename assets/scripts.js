@@ -21,10 +21,15 @@ async function submitForm(){
             body: JSON.stringify({ username }),
             credentials: "include" // sends cookies with request
         });
-
+        
         const data = await response.json();
+
+        if (response.ok) {
+            alert(data.message);
+        } else {
+            alert(data.error);
+        }
     } catch (error) {
         console.error("Eror submitting form:", error);
     }
-
 }
