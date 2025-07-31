@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, "assets")));
 
 app.get("/", csrfMiddleware, (req, res) => {
-    res.sendFile(path.join(__dirname, "assets", "index.html"));
+    res.sendFile(path.join(__dirname, "assets", "form.html"));
 });
 
 app.post("/api/submit-form", csrfMiddleware, (req, res) => {
@@ -24,4 +24,3 @@ app.post("/api/submit-form", csrfMiddleware, (req, res) => {
 app.listen(PORT, ()=>{
     console.log(`Server is running on http://localhost:${PORT}`)
 });
-
